@@ -1,0 +1,33 @@
+<div *ngIf="salesPersons.length && !isAdding">
+    <h2>Sales Persons</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Primary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let salesPerson of salesPersons" (click)="onSelect(salesPerson)"
+                [class.selected]="salesPerson === selectedSalesPerson">
+                <td>
+                    {{salesPerson.id}}
+                </td>
+                <td>
+                    {{salesPerson.name}}
+                </td>
+                <td>
+                    {{salesPerson.isPrimary}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="onAdd()">Add</button>
+    <button [disabled]="!selectedSalesPerson" (click)="onRemove(selectedSalesPerson)">Remove</button>
+</div>
+
+<div *ngIf="isAdding">
+    <h2>Add Sales Person</h2>
+    <app-addsalesperson (done)="addDone($event)" [district]="_district"></app-addsalesperson>
+</div>

@@ -1,0 +1,40 @@
+.wrapper {
+    /* background-color: whitesmoke; */
+    list-style-type: none;
+    padding: 0;
+    border-radius: 3px;
+    width: 300px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: flex-end;
+    padding: .5em;
+}
+
+.form-row>label {
+    padding: .5em 1em .5em 0;
+    flex: 1;
+}
+
+.form-row>input {
+    flex: 2;
+}
+
+.form-row>select {
+    flex: 2;
+}
+
+.form-row>input,
+.form-row>select {
+    padding: .5em;
+}
+
+.form-row>button {
+    margin: .5em;
+}
+
+/* .form-row>button {
+    color: white;
+    border: 0;
+} */

@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    font: normal 14px Verdana, Arial, sans-serif;
+}
+
+table tbody tr:hover {
+    background-color: #d0d8f7;
+}
+
+table,
+th,
+td {
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: left;
+}
+
+.selected {
+    background-color: #f7f6d0;
+}

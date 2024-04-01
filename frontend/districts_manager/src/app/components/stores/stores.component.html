@@ -1,0 +1,21 @@
+<div *ngIf="shops.length">
+    <h2>Stores</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let shop of shops">
+                <td>
+                    {{shop.id}}
+                </td>
+                <td>
+                    {{shop.city}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

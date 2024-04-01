@@ -1,0 +1,18 @@
+<ul class="wrapper">
+    <li class="form-row">
+        <label for="salesPerson_id">Sales Person ID:</label>
+        <input id="salesPerson_id" type="number" [(ngModel)]="salesperson.salesPersonId" placeholder="Sales person id">
+    </li>
+    <li class="form-row">
+        <label for="is_primary">Is primary:</label>
+        <select id="is_primary" [(ngModel)]="salesperson.isPrimary">
+            <option value=true>Yes</option>
+            <option value=false>No</option>
+        </select>
+    </li>
+
+    <li class="form-row">
+        <button (click)="onSave()">Save</button>
+        <button (click)="onCancel()">Cancel</button>
+    </li>
+</ul>

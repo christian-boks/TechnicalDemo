@@ -1,0 +1,27 @@
+<h2>Districts</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let district of districts" (click)="onSelect(district)"
+            [class.selected]="district === selectedDistrict">
+            <td>
+                {{district.id}}
+            </td>
+            <td>
+                {{district.name}}
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+
+<div *ngIf="selectedDistrict">
+    <app-stores [district]="selectedDistrict"></app-stores>
+    <app-salespersons [district]="selectedDistrict"></app-salespersons>
+</div>

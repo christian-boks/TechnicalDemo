@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package BackendApi;
+
+service BackendApi {
+
+  rpc GetAllDistricts(google.protobuf.Empty) returns (GetAllDistrictsReply);
+
+  rpc GetAllSalesPersonsForDistrict(GetAllSalesPersonsForDistrictRequest)
+      returns (GetAllSalesPersonsForDistrictReply);
+
+  rpc AddSalesPersonToDistrict(AddSalesPersonToDistrictRequest)
+      returns (google.protobuf.Empty);
+
+  rpc RemoveSalesPersonFromDistrict(RemoveSalesPersonFromDistrictRequest)
+      returns (google.protobuf.Empty);
+
+  rpc GetAllStoresForDistrict(GetAllStoresForDistrictRequest)
+      returns (GetAllStoresForDistrictReply);
+}
+
+message GetAllDistrictsReply { repeated District list = 1; }
+
+message GetAllSalesPersonsForDistrictRequest { int32 districtId = 1; }
+
+message GetAllSalesPersonsForDistrictReply { repeated SalesPerson list = 1; }
+
+message GetAllStoresForDistrictRequest { int32 districtId = 1; }
+
+message GetAllStoresForDistrictReply { repeated Store list = 1; }
+
+message AddSalesPersonToDistrictRequest {
+  int32 districtId = 1;
+  int32 salesPersonId = 2;
+  bool isPrimary = 3;
+}
+
+message RemoveSalesPersonFromDistrictRequest {
+  int32 districtId = 1;
+  int32 salesPersonId = 2;
+}
+
+message SalesPerson {
+  int32 id = 1;
+  string name = 2;
+  bool isPrimary = 3;
+}
+
+message District {
+  int32 id = 1;
+  string name = 2;
+}
+
+message Store {
+  int32 id = 1;
+  int32 districtId = 2;
+  string city = 3;
+}
