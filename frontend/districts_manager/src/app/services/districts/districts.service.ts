@@ -5,7 +5,7 @@ import { District, GetAllDistrictsReply } from '../../generated/grpc/backend_api
 import google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb.js'
 import { BackendApiClient } from '../../generated/grpc/Backend_apiServiceClientPb';
 
-let useREST = true;
+let useREST = false;
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class DistrictsService {
   }
 
   getDistricts(): Observable<DistrictModel[]> {
-    if (!useREST) {
+    if (useREST) {
       return this.api.getAllDistricts();
     } else {
       const observable = new Observable<DistrictModel[]>((subscriber) => {

@@ -22,8 +22,6 @@ var global =
   (function () { return this; }).call(null) ||
   Function('return this')();
 
-//var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
-
 import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
 goog.object.extend(proto, google_protobuf_empty_pb);
 goog.exportSymbol('proto.BackendApi.AddSalesPersonToDistrictRequest', null, global);
