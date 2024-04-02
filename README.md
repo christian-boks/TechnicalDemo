@@ -101,17 +101,36 @@ Based on the given requirements we can determine how we should design the API.
 * List sales persons associated with a district.
 * List stores belonging to a district.
 
-## API
+## REST API
 ``` api
 GET    /api/v1/districts - return all districts.
 
-GET    /api/v1/salespersons - return all sales persons.
 GET    /api/v1/salespersons/districts/{id} - return all sales persons for district.
 POST   /api/v1/salespersons/districts/{id} - add sales person to district.
 DELETE /api/v1/salespersons/{id}/districts/{id} - remove sales person from district.
 
 GET    /api/v1/stores/districts/{id} - return all stores belonging to district.
 ```
+
+## GRPC API
+``` proto
+service BackendApi {
+  rpc GetAllDistricts(google.protobuf.Empty) returns (GetAllDistrictsReply);
+
+  rpc GetAllSalesPersonsForDistrict(GetAllSalesPersonsForDistrictRequest)
+      returns (GetAllSalesPersonsForDistrictReply);
+
+  rpc AddSalesPersonToDistrict(AddSalesPersonToDistrictRequest)
+      returns (google.protobuf.Empty);
+
+  rpc RemoveSalesPersonFromDistrict(RemoveSalesPersonFromDistrictRequest)
+      returns (google.protobuf.Empty);
+
+  rpc GetAllStoresForDistrict(GetAllStoresForDistrictRequest)
+      returns (GetAllStoresForDistrictReply);
+}
+``` 
+
 
 # Backend Service Design
 
