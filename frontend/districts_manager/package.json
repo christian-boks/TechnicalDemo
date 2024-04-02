@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "protogen": "c:/temp/grpc/protoc.exe backend_api.proto --proto_path=c:/temp/grpc/include --proto_path=C:/Users/Christian/code/TechnicalDemo/backend/BackendApi/Resources/proto --js_out=import_style=commonjs,binary:./src/app/generated/grpc --grpc-web_out=import_style=typescript,mode=grpcweb:./src/app/generated/grpc",
     "swaggergen": "openapi-generator-cli generate -i ./../../backend/BackendApi/resources/swagger.json -g typescript-angular -o src/app/generated --additional-properties=ngVersion=17.2.0,npmName=restClient,supportsES6=true,npmVersion=9.6.0,withInterfaces=true"
   },
   "private": true,

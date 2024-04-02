@@ -1,10 +1,7 @@
 using System.Net;
-using System.Security.Permissions;
 using System.Text.Json;
 using Grpc.Core;
 using Grpc.Core.Interceptors;
-using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 
 namespace BackendApi.Utils;
 

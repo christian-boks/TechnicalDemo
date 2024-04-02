@@ -7,8 +7,6 @@ public interface IDistrictService
 {
     Task<IEnumerable<DistrictModel>> GetAll();
     Task<DistrictModel> GetById(int id);
-    // Task AddSalesPerson(AddSalesPersonRequestModel req);
-    // Task RemoveSalesPerson(int districtId, int salespersonId);
 }
 
 public class DistrictService : IDistrictService
@@ -34,20 +32,4 @@ public class DistrictService : IDistrictService
         return new DistrictModel(entity.id, entity.name);
     }
 
-    // public async Task AddSalesPerson(AddSalesPersonRequestModel req)
-    // {
-    //     if (req.is_primary)
-    //     {
-    //         await districtRepository.AddPrimarySalesPerson(req.district_id, req.salesPerson_id);
-    //     }
-    //     else
-    //     {
-    //         await districtSalesPersonRepository.AddSecondarySalesPerson(req.district_id, req.salesPerson_id);
-    //     }
-    // }
-
-    // public async Task RemoveSalesPerson(int districtId, int salespersonId)
-    // {
-    //     await districtSalesPersonRepository.RemoveSecondarySalesPerson(districtId, salespersonId);
-    // }
 }
